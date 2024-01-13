@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    // "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    //要把套件規則加入rules這樣build的時候才會檢查
+    //預設選項
+    "no-console": "off",
+    // //prettier
+    // "prettier/prettier": [
+    //   "error",
+    //   {},
+    //   {
+    //     "usePrettierrc": true
+    //   }
+    // ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@assets",
+            "./src/assets/"
+          ],
+          [
+            "@img",
+            "./src/assets/images"
+          ],
+          [
+            "@stylesheet",
+            "./src/stylesheet"
+          ]
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".json",
+          ".css",
+          ".scss"
+        ]
+      }
+    }
+  }
+}

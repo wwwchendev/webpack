@@ -1,0 +1,18 @@
+# Ignore all files with a .min.js extension
+*.min.js
+
+# Ignore the "dist" directory
+dist/
+build/
+
+# Ignore the "node_modules" directory
+node_modules/
+vendor/
+
+# Ignore a specific file
+*.config.js
+pnpm-lock.yaml
+package.json
+.babelrc
+.eslintrc.json
+.prettierrc.json

@@ -3,6 +3,7 @@ const path = require('path')
 //console.log(__dirname); //>> C:\Users\..\Desktop\Test
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 // 設定
 const Mode = process.env.NODE_ENV === 'production' ? 'production' : 'development' //透過 cross-env搭配scripts  process.env.NODE_ENV環境變數的過程
@@ -86,7 +87,8 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin(Config.pages.index),
-      Mode == 'production' && new MiniCssExtractPlugin(Config.cssFileName),
+      Mode === 'production' && new MiniCssExtractPlugin(Config.cssFileName),
+      new ESLintPlugin()
     ].filter(Boolean), // 過濾掉空的插件,
     devServer: {
       static: [

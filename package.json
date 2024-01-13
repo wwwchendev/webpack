@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --fix",
     "start": "cross-env NODE_ENV=development webpack serve --mode development",
     "build": "cross-env NODE_ENV=development webpack --mode development",
     "deploy": "cross-env NODE_ENV=production webpack --mode production"
@@ -22,6 +23,11 @@
     "cssnano": "^6.0.3",
     "ejs": "^3.1.9",
     "ejs-loader": "^0.5.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.7.7",
     "postcss": "^8.4.33",
