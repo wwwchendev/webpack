@@ -16,4 +16,4 @@ img3.src = image3
 
 // - 測試 css
 // import '@css/index.css'
-import '@css/all.css'
+import '@stylesheet/all.scss'

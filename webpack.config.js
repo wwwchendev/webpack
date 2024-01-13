@@ -22,7 +22,7 @@ const Config = {
   alias: {
     '@assets': path.resolve(__dirname, './src/assets/'),
     '@img': path.resolve(__dirname, './src/assets/images'),
-    '@css': path.resolve(__dirname, './src/css'),
+    '@stylesheet': path.resolve(__dirname, './src/stylesheet'),
   },
   //- HTML
   pages: {
@@ -33,7 +33,7 @@ const Config = {
     },
   },
   //- CSS
-  cssFileName: { filename: 'css/[name].css' },
+  cssFileName: { filename: 'stylesheet/[name].css' },
 }
 
 module.exports = () => {
@@ -63,11 +63,12 @@ module.exports = () => {
           }
         },
         {
-          test: /\.css$/,
+          test: /\.scss$/,
           use: [
             Mode == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
             //如果你在設定中使用了MiniCssExtractPlugin.loader，就表示你想要將CSS提取到獨立的檔案中，而不需要將樣式內聯到JavaScript檔案中，因此不再需要style-loader。
             'css-loader',
+            'sass-loader',
             'postcss-loader',
           ]
         },
