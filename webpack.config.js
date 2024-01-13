@@ -38,7 +38,6 @@ const Config = {
 
 module.exports = () => {
   console.log(`當前Webpack建構模式：${Mode}`)
-
   return {
     // 配置順序: mode,entry,output,resolve,module,plugin,devServer,devtool
     mode: Mode || 'development',
@@ -67,20 +66,20 @@ module.exports = () => {
       new HtmlWebpackPlugin(Config.pages.index),
       Mode == 'production' && new MiniCssExtractPlugin(Config.cssFileName),
     ].filter(Boolean), // 過濾掉空的插件,
-    // devServer: {
-    //   static: [
-    //     {
-    //       directory: path.join(__dirname, 'dist/'),
-    //       watch: true,
-    //     },
-    //   ],
-    //   open: true, //自動在預設瀏覽器中開啟應用程式
-    //   hot: true, //啟用熱模塊
-    //   port: 8080, //server指令監聽port
-    //   devMiddleware: {
-    //     index: 'html/index.html', // 指定要打開的預設文件
-    //   },
-    // },
-    // devtool: Mode === 'production' ? 'inline-source-map' : 'source-map', //啟用映射路徑 (Source Map)
+    devServer: {
+      static: [
+        {
+          directory: path.join(__dirname, 'dist/'),
+          watch: true,
+        },
+      ],
+      open: true, //自動在預設瀏覽器中開啟應用程式
+      hot: true, //啟用熱模塊
+      port: 8080,
+      devMiddleware: {
+        index: 'html/index.html', // 指定要打開的預設文件
+      },
+    },
+    devtool: Mode === 'production' ? 'inline-source-map' : 'source-map', //啟用映射路徑 (Source Map)
   }
 }

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "start": "cross-env NODE_ENV=development webpack serve --mode development",
+    "build": "cross-env NODE_ENV=development webpack --mode development",
+    "deploy": "cross-env NODE_ENV=production webpack --mode production"
   },
   "keywords": [],
   "author": "",
