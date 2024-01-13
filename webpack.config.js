@@ -27,7 +27,7 @@ const Config = {
   //- HTML
   pages: {
     index: {
-      template: './src/html/index.html', // 來源HTML文件
+      template: './src/html/index.ejs', // 來源HTML文件
       chunks: ['index'], // 注入的JavaScript chunks，這裡使用了 'index'，對應到 entries 中的 'index'
       filename: 'html/index.html', // 輸出的HTML檔案名稱
     },
@@ -70,6 +70,16 @@ module.exports = () => {
             'css-loader',
             'postcss-loader',
           ]
+        },
+        {
+          test: /\.ejs$/,
+          loader: 'ejs-loader',
+          options: {
+            esModule: false,
+            variable: 'data',
+            interpolate: '\\{\\{(.+?)\\}\\}',
+            evaluate: '\\[\\[(.+?)\\]\\]'
+          }
         },
       ],
     },
