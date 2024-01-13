@@ -6,7 +6,7 @@
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    // "plugin:prettier/recommended"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -16,14 +16,14 @@
     //要把套件規則加入rules這樣build的時候才會檢查
     //預設選項
     "no-console": "off",
-    // //prettier
-    // "prettier/prettier": [
-    //   "error",
-    //   {},
-    //   {
-    //     "usePrettierrc": true
-    //   }
-    // ]
+    //prettier
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
