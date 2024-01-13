@@ -65,12 +65,11 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: [
-            Mode == 'development'
-              ? 'style-loader'
-              : MiniCssExtractPlugin.loader,
+            Mode == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
             //如果你在設定中使用了MiniCssExtractPlugin.loader，就表示你想要將CSS提取到獨立的檔案中，而不需要將樣式內聯到JavaScript檔案中，因此不再需要style-loader。
             'css-loader',
-          ],
+            'postcss-loader',
+          ]
         },
       ],
     },

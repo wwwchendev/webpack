@@ -1,3 +1,8 @@
 * {
   color: blue
 }
+
+p {
+  /*- 測試 PostCSS Autoprefixer 會為屬性添加瀏覽器前綴 */
+  user-select: none;
+}
