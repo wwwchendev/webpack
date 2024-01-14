@@ -74,14 +74,8 @@ module.exports = () => {
           ]
         },
         {
-          test: /\.ejs$/,
-          loader: 'ejs-loader',
-          options: {
-            esModule: false,
-            variable: 'data',
-            interpolate: '\\{\\{(.+?)\\}\\}',
-            evaluate: '\\[\\[(.+?)\\]\\]'
-          }
+          test: /\.ejs$/i,
+          use: ['html-loader', 'template-ejs-loader'],
         },
       ],
     },
